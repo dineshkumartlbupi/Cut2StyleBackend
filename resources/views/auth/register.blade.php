@@ -47,7 +47,7 @@
         <select name="role">
             <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
             <option value="Vendor" {{ old('role') == 'Vendor' ? 'selected' : '' }}>Vendor</option>
-            <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Customer</option>
+            <option value="User" {{ old('role') == 'User' ? 'selected' : '' }}>User</option>
         </select><br><br>
 
         <button type="submit">Register</button>
