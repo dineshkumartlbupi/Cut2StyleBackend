@@ -14,4 +14,8 @@ class Product extends Model
         'image_url', // Corrected field name
         'user_id', // Add this
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
