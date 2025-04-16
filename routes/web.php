@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/auth/register', function () {
+    return view('auth/register');
+});
+
+Route::get('/auth/login', function () {
+    return view('auth/login');
+});
+
+Route::post('registerUser',[AuthController::class,'register'])->name('registerUser');
 
 // Route::get('/reset-password/{token}', function ($token) {
 //     return response()->json(['message' => 'Redirect page for reset (not used in API)', 'token' => $token]);
