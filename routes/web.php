@@ -11,6 +11,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/nav-sec', function () {
+    return view('nav-sec');
+});
+
 // ---------------------------
 // Auth Routes - Login/Register
 // ---------------------------
