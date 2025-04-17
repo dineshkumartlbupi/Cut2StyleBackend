@@ -61,22 +61,21 @@
                                         placeholder="Email" required />
                                 </div>
                                 <div class="col-12">
-                                    <select type="email" name="gender" class="form-select" required >
-                                        <option value="" selected disabled>Select Role</option>
+                                    <select name="gender" class="form-select" required >
+                                        <option value="" selected disabled>Select Gender</option>
                                         <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
                                         <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
                                         <option value="Other" {{ old('gender') == 'Other' ? 'selected' : '' }}>Other</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <select type="email" name="role" class="form-select" id="formSignuprole"
+                                    <select name="role" class="form-select" id="formSignuprole"
                                         placeholder="role" required >
                                         <option value="" selected disabled>Select Role</option>
                                         <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
                                         <option value="Vendor" {{ old('role') == 'Vendor' ? 'selected' : '' }}>Vendor</option>
                                         <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Customer</option>
                                     </select>
-                                    <div class="invalid-feedback">Please select role.</div>
                                 </div>
                                 <div class="col-12">
                                     <!-- input -->
@@ -84,13 +83,13 @@
                                 </div>
                                 <div class="col-12">
                                     <!-- input -->
-                                    <textarea name="address" class="form-control">{{ old('address') }}</textarea>
+                                    <textarea name="address" class="form-control" placeholder="Address">{{ old('address') }}</textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="password-field position-relative">
                                         <div class="password-field position-relative">
                                             <input type="password" name="password" class="form-control fakePassword"
-                                            id="formSignupPassword" placeholder="*****" required />
+                                            id="formSignupPassword" placeholder="Password" required />
                                             <span><i class="bi bi-eye-slash passwordToggler"></i></span>
                                         </div>
                                     </div>
@@ -99,7 +98,8 @@
                                     <div class="password-field position-relative">
                                         <div class="password-field position-relative">
                                             <input type="password" name="password_confirmation" class="form-control fakePassword"
-                                                placeholder="*****" required />
+                                                placeholder="Confirm Password" required />
+                                                <span><i class="bi bi-eye-slash passwordToggler"></i></span>
                                         </div>
                                     </div>
                                 </div>

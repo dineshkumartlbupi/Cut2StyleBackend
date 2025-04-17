@@ -41,10 +41,10 @@
                                             </h6>
 
                                             <!-- List -->
-                                            <a class="dropdown-item" href="about.html">Welcome to C<span
+                                            <a class="dropdown-item" href="#">Welcome to C<span
                                                     class="two">2</span>S</a>
-                                            <a class="dropdown-item" href="people-matter.html">People Matter</a>
-                                            <a class="dropdown-item" href="todays-trend.html">Today's Trend</a>
+                                            <a class="dropdown-item" href="#">People Matter</a>
+                                            <a class="dropdown-item" href="#">Today's Trend</a>
                                             <a class="dropdown-item" href="#"><em>Bee's</em> Philosophy</a>
                                             <a class="dropdown-item" href="#"><em>Bee's</em> Mission</a>
                                             <a class="dropdown-item" href="#">7 Reasons</a>
@@ -108,8 +108,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarPages" data-bs-toggle="dropdown" href="#"
-                        aria-haspopup="true" aria-expanded="false"
-                        style="color: #e00505;text-decoration: underline;">Services</a>
+                        aria-haspopup="true" aria-expanded="false">Services</a>
                     <div class="dropdown-menu dropdown-menu-xxl first" aria-labelledby="navbarPages">
                         <div class="row gx-0">
                             <div class="col-5">
