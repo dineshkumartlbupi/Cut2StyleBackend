@@ -12,7 +12,6 @@ class RoleMiddleware
         if (auth()->check() && strtolower(auth()->user()->role) === strtolower($role)) {
             return $next($request);
         }
-
         abort(403, 'Unauthorized access.');
     }
 }
