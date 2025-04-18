@@ -41,7 +41,7 @@ class AuthController extends Controller
             } elseif ($user->role === 'Vendor') {
                 return redirect()->route('vendor.dashboard');
             } else {
-                return redirect()->route('customer.dashboard');
+                return redirect()->route('user.dashboard');
             }
         }
 
@@ -72,7 +72,7 @@ class AuthController extends Controller
             return back()->withErrors($validator)->withInput();
         }
 
-        User::create([
+        $user = User::create([
             'role'     => $request->role,
             'name'     => $request->name,
             'gender'   => $request->gender,
@@ -81,7 +81,11 @@ class AuthController extends Controller
             'email'    => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+        // Create token
+        $token = $user->createToken('auth_token')->plainTextToken;
+        // Save token inside remember_token field
+        $user->remember_token = $token;
+        $user->save();
         return redirect()->route('login')->with('success', 'Registration successful! Please login.');
     }
 

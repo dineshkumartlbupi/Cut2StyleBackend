@@ -74,7 +74,7 @@
                                         <option value="" selected disabled>Select Role</option>
                                         <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
                                         <option value="Vendor" {{ old('role') == 'Vendor' ? 'selected' : '' }}>Vendor</option>
-                                        <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Customer</option>
+                                        <option value="User" {{ old('role') == 'User' ? 'selected' : '' }}>User</option>
                                     </select>
                                 </div>
                                 <div class="col-12">

@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Customer\DashboardController as CustomerDashboardController;
-use App\Http\Controllers\Vendor\DashboardController as VendorDashboardController;
 use App\Http\Controllers\Auth\AuthController;
+
 
 // Public Home Page
 Route::get('/', function () {
@@ -33,6 +31,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // ---------------------------
 // Protected Routes After Login
 // ---------------------------
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/redirect-after-login', function () {
@@ -43,16 +42,13 @@ Route::middleware(['auth'])->group(function () {
         } elseif ($user->role === 'vendor') {
             return redirect()->route('vendor.dashboard');
         } else {
-            return redirect()->route('customer.dashboard');
+            return redirect()->route('user.dashboard');
         }
     });
 
-
-    // Dashboards
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/vendor/dashboard', [VendorDashboardController::class, 'index'])->name('vendor.dashboard');
-    Route::get('/customer/dashboard', [CustomerDashboardController::class, 'index'])->name('customer.dashboard');
 });
 
 
-
+require __DIR__.'/admin.php';
+require __DIR__.'/vendor.php';
+require __DIR__.'/user.php';

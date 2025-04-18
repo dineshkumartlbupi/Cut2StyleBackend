@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        if (auth()->user()->role !== 'Vender') {
+        if (auth()->user()->role !== 'Vendor') {
             abort(403, 'Unauthorized.');
         }
 

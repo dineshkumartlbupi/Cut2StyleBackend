@@ -47,22 +47,21 @@
                         <div class="mb-lg-9 mb-5">
                             <h1 class="mb-1 h2 fw-bold">Sign In</h1>
                         </div>
-                        <!-- form -->
                         <form name="loginFrm" class="needs-validation" method="post" action="{{ route('login') }}">
+                            @csrf {{-- ✅ This line is required for CSRF protection --}}
+
                             <div class="row g-3">
-                                <!-- col -->
+                                <!-- Your email and password fields remain unchanged -->
                                 <div class="col-12">
-                                    <!-- input -->
-                                    <label for="formSignupEmail" class="form-label visually-hidden">Email
-                                        address</label>
+                                    <label for="formSignupEmail" class="form-label visually-hidden">Email address</label>
                                     <input type="email" name="email" class="form-control" id="formSignupEmail"
                                         placeholder="Email" required value="{{ old('email') }}"/>
                                     <div class="invalid-feedback">Please enter email.</div>
                                 </div>
+
                                 <div class="col-12">
                                     <div class="password-field position-relative">
-                                        <label for="formSignupPassword"
-                                            class="form-label visually-hidden">Password</label>
+                                        <label for="formSignupPassword" class="form-label visually-hidden">Password</label>
                                         <div class="password-field position-relative">
                                             <input type="password" name="password" class="form-control fakePassword"
                                                 id="formSignupPassword" placeholder="*****" required />
@@ -71,15 +70,17 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-12">
                                     <p>Don't have an account? <a style="color: #e00505;" href="{{ route('register') }}">Register</a></p>
                                 </div>
-                                <!-- btn -->
-                                <div class="col-12 d-grid"><button type="submit" class="btn btn-primary">Login</button>
-                                </div>
 
+                                <div class="col-12 d-grid">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
