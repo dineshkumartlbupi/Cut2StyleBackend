@@ -2,11 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\HomeController;
 
+// // Public Home Page
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-// Public Home Page
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+Route::get('/nav-sec', function () {
+    return view('nav-sec');
 });
 
 // ---------------------------

@@ -19,6 +19,7 @@
                         <th style="width: 5%;">#</th>
                         <th style="width: 12%;"><i class="fas fa-image me-1"></i> Image</th>
                         <th><i class="fas fa-box me-1"></i> Name</th>
+                        <th style="width: 15%;"><i class="fas fa-tags me-1"></i> Category</th>  {{-- New --}}
                         <th><i class="fas fa-tag me-1"></i> Price</th>
                         <th style="width: 20%;"><i class="fas fa-cog me-1"></i> Actions</th>
                     </tr>
@@ -37,6 +38,13 @@
                         <td class="text-start">
                             <strong>{{ $product->name }}</strong>
                             <p class="text-muted small mb-0">{{ Str::limit($product->description, 50) }}</p>
+                        </td>
+                        <td> {{-- New category cell --}}
+                            @if($product->category)
+                                <span class="badge bg-info text-dark">{{ $product->category->name }}</span>
+                            @else
+                                <span class="text-muted">Uncategorized</span>
+                            @endif
                         </td>
                         <td><strong class="text-success">₹{{ number_format($product->price, 2) }}</strong></td>
                         <td>
@@ -60,6 +68,11 @@
                     @endforeach
                 </tbody>
             </table>
+
+            {{-- Pagination --}}
+            <div class="mt-3">
+                {{ $products->links() }}
+            </div>
         </div>
     @else
         <div class="text-center mt-5">

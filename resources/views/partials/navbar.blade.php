@@ -1,3 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-12 text-center text-md-start">&nbsp;</div>
+        <div class="col-6 text-end d-none d-md-block">
+            <a class="classssnew" href="tel:1.855.4CUT2STYLE (428.8278)" target="_blank"
+                style="   font-weight: 500;text-align: center;color: #000;padding: 1px 20px;font-size: 13px;">Ph. #
+                1.855.4CUT2STYLE (428.8278)</a>
+        </div>
+    </div>
+</div>
 <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-inverse">
     <div class="container-fluid">
 
